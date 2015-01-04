@@ -11,15 +11,9 @@ RUN apt-get upgrade --yes --force-yes
 
 RUN  apt-get -q -q update
 
-RUN apt-get -y install build-essential git subversion quilt gawk unzip python wget zlib1g-dev libncurses5-dev fakeroot ca-certificates wget openssh-server tzdate
-
-RUN echo 'Europe/Berlin' > /etc/timezone && dpkg-reconfigure tzdate
+RUN apt-get -y install build-essential git subversion quilt gawk unzip python wget zlib1g-dev libncurses5-dev fakeroot ca-certificates wget openssh-server
 
 RUN useradd --home-dir /builder --shell /bin/bash --no-create-home builder
-
-RUN ./openwrt/scripts/prepare chaos_calmer trunk 42949 && \
- rm -rf .git && \
- chown -R builder:builder build
 
 WORKDIR /buildsystem
 ENV HOME /buildsystem
