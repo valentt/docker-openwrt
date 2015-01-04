@@ -5,14 +5,16 @@ MAINTAINER Valent Turkovic <valent@otvorenamreza.org>
 ENV DEBIAN_FRONTEND noninteractive
 ENV FW_PACKAGE_HOST packages.wlan-si.net
 
-RUN apt-get update -q -q && echo 'Europe/Berlin' > /etc/timezone && dpkg-reconfigure tzdate
+RUN apt-get update -q -q 
 
 RUN apt-get upgrade --yes --force-yes
 
 RUN  apt-get -q -q update
 
-RUN apt-get -y install build-essential git subversion quilt gawk unzip python wget zlib1g-dev libncurses5-dev fakeroot ca-certificates wget openssh-server
- 
+RUN apt-get -y install build-essential git subversion quilt gawk unzip python wget zlib1g-dev libncurses5-dev fakeroot ca-certificates wget openssh-server tzdate
+
+RUN echo 'Europe/Berlin' > /etc/timezone && dpkg-reconfigure tzdate
+
 RUN useradd --home-dir /builder --shell /bin/bash --no-create-home builder
 
 RUN ./openwrt/scripts/prepare chaos_calmer trunk 42949 && \
