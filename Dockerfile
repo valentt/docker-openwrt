@@ -22,8 +22,9 @@ ADD https://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/OpenWrt-I
 
 RUN cd /buildsystem && tar -xvjpf OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64.tar.bz2 && rm OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64.tar.bz2 && chown builder:builder /buildsystem/OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64 -R && echo "src/gz barrier_breaker_packages http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/packages/packages" >> /buildsystem/OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64/repositories.conf && echo "src/gz barrier_breaker_oldpackages http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/packages/oldpackages" >> /buildsystem/OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64/repositories.conf
 
-RUN echo "src/gz barrier_breaker http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/packages/packages
-src/gz barrier_breaker_old http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/packages/oldpackages" >> /buildsystem/OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64/repositories.conf
+#RUN echo "src/gz barrier_breaker http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/packages/packages" >> /buildsystem/OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64/repositories.conf
+ 
+#RUN echo "src/gz barrier_breaker_old http://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic/packages/oldpackages" >> /buildsystem/OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64/repositories.conf
 
 
 EXPOSE 22
