@@ -10,7 +10,7 @@ RUN apt-get upgrade --yes --force-yes
 
 RUN  apt-get -q -q update
 
-RUN apt-get -y install build-essential git subversion quilt gawk unzip python wget zlib1g-dev libncurses5-dev fakeroot ca-certificates wget openssh-server nano vim
+RUN apt-get -y install build-essential git subversion quilt gawk unzip python wget zlib1g-dev libncurses5-dev fakeroot ca-certificates wget openssh-server nano vim mc
 
 RUN useradd --home-dir /builder --shell /bin/bash --no-create-home builder
 
